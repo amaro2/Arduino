@@ -1,0 +1,56 @@
+  int n1 = 3;
+  int n2 = 5;
+  int n1n2 = n1 * n2;
+  int maxValue = 77;
+  int i = 1;
+
+void setup()
+{
+  	pinMode (13, OUTPUT);
+    pinMode (12, OUTPUT);
+    pinMode (11, OUTPUT);
+    pinMode (10, OUTPUT);
+}
+
+void loop()
+{
+
+  while (i <= maxValue) {
+    
+    //fizzbuzz
+  	if ((i % n1n2) == 0)
+        {
+            digitalWrite(13, HIGH);
+  			delay(1000);
+  			digitalWrite(13, LOW);
+  			delay(1000); 
+        }
+    
+    //fizz
+    else if ((i % n1) == 0) {
+    		digitalWrite(12, HIGH);
+  			delay(1000);
+  			digitalWrite(12, LOW);
+  			delay(1000);
+    
+   		 }
+    
+    //buzz
+    else if ((i % n2) == 0) {
+    		digitalWrite(11, HIGH);
+  			delay(1000);
+  			digitalWrite(11, LOW);
+  			delay(1000); 
+    }
+    
+    //nem fizz, nem buzz, nem fizzbuzz
+    else {
+    		digitalWrite(10, HIGH);
+  			delay(1000);
+  			digitalWrite(10, LOW);
+  			delay(1000); 
+    
+    }
+    i++;
+  }
+}
